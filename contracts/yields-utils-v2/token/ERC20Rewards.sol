@@ -67,7 +67,7 @@ contract ERC20Rewards is AccessControl, ERC20Permit {
         uint32 start,
         uint32 end,
         uint96 rate
-    ) external auth {
+    ) public auth {
         require(start <= end, "Incorrect input");
         // A new rewards program can be set if one is not running
         require(

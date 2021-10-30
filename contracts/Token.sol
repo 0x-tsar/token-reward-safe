@@ -12,12 +12,12 @@ contract Token is ERC20Rewards {
     constructor(address rewardsToken)
         ERC20Rewards("Reward Token", "REWR", 18, IERC20(rewardsToken))
     {
-        _mint(msg.sender, 10 * 10**18);
+        _mint(msg.sender, 1 * 10**18);
 
-        // setRewards(
-        //     uint32(block.timestamp),
-        //     uint32(block.timestamp + (365 days * 10000)), //100_000 years
-        //     0.01 ether
-        // );
+        setRewards(
+            uint32(block.timestamp),
+            uint32(block.timestamp + (365 days * 10000)), //100_000 years
+            0.001 ether
+        );
     }
 }

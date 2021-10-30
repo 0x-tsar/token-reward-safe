@@ -14,10 +14,10 @@ module.exports = async () => {
     //     uint96 rate
     // ) external auth {
 
-    const timestamp = new Date().getTime();
-    console.log(timestamp);
+    // const timestamp = new Date().getTime();
+    // console.log(timestamp);
 
-    const rate = web3.utils.toWei("0.1");
+    // const rate = web3.utils.toWei("0.1");
 
     // console.log(timestamp + 31556952000 * 10000);
 
@@ -46,20 +46,20 @@ module.exports = async () => {
     // let balance = await reward.balanceOf(token.address);
     // console.log(balance.toString());
 
-    // setInterval(async () => {
-    //   await token.claim(account);
-    //   let balanceReward = await reward.balanceOf(account);
-    //   console.log(`balanceReward: ${web3.utils.toWei(balanceReward)}`);
+    setInterval(async () => {
+      await token.claim(account);
+      let balanceReward = await reward.balanceOf(account);
+      console.log(`balanceReward: ${web3.utils.toWei(balanceReward)}`);
 
-    //   let contractBalance = await reward.balanceOf(token.address);
-    //   console.log(`should be decreasing ${contractBalance}`);
+      let contractBalance = await reward.balanceOf(token.address);
+      console.log(`should be decreasing ${contractBalance}`);
 
-    //   let myEthers = await web3.eth.getBalance(account);
-    //   console.log(`myEthers: ${myEthers}`);
+      // let myEthers = await web3.eth.getBalance(account);
+      // console.log(`myEthers: ${myEthers}`);
 
-    //   // let balanceToken = await token.balanceOf(account);
-    //   // console.log(`balanceToken: ${web3.utils.toWei(balanceToken)}`);
-    // }, 10_000);
+      // let balanceToken = await token.balanceOf(account);
+      // console.log(`balanceToken: ${web3.utils.toWei(balanceToken)}`);
+    }, 10_000);
     // //
   } catch (error) {
     console.log(error);
